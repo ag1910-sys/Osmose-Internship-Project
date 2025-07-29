@@ -1,2 +1,56 @@
 # Osmose-Internship-Project
 This is A Streamlit app that runs inside Snowflake
+
+# Snowflake streamlit Dashboard
+This project is a Streamlit app that runs inside Snowflake. It helps you see how your Snowflake account is being used — including storage, credit usage, and queries — in a clear, interactive way.
+
+# What This Dashboard Does
+• Shows how many credits your warehouses are using day-to-day
+• Highlights the most expensive queries
+• Tracks how your storage is growing over time
+• Breaks down where credits are going (compute vs. cloud services)
+• Lets you search queries by text, filter by date, and more
+• Gives you quick summary stats (total credits, latest storage, etc.)
+
+# What You'll See in the Dashboard
+## Daily Credits
+• See how many credits your warehouses are using over time
+• Filter by date range and warehouse
+• Line and bar charts for Visualizations
+
+## Top Costly Queries
+• Find the most expensive queries based on credits used
+• Use the Top N slider to control how many to show
+• Search by keywords in the query text
+
+## Storage Growth
+• Track how much storage your account is using
+• Shown over time in a simple line chart
+
+## Credit Breakdown
+• See how many credits go to compute vs. cloud services
+• Helpful for budget planning
+
+## Query Duration
+• Histogram of query run times (in seconds)
+• Helps spot long-running or inefficient queries
+
+## Summary Stats
+• Total credits used
+• Average daily credits
+• Latest reported storage size
+
+# How the Data Is Pulled
+The app uses simple SQL queries to get data from Snowflake tables (already created under OSM_DEV.RPT).
+Example SQL:
+## Get warehouse usage:
+SELECT * FROM OSM_DEV.RPT.DAILY_WAREHOUSE_CREDITS; 
+
+## Get top credit-consuming queries:
+SELECT * FROM OSM_DEV.RPT.TOP_COSTLY_QUERIES; 
+
+## Get storage size over time:
+SELECT DATE, TOTAL_STORAGE_USED FROM OSM_DEV.RPT.STORAGE_GROWTH_TABLE;
+
+Don’t worry — the app is wrapped in error handling, so if something goes wrong, you’ll see a helpful message instead of a crash. 
+
