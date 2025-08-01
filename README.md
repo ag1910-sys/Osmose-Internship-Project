@@ -47,7 +47,7 @@ If you want to try this dashboard on your own system, here’s how to get starte
 Open your terminal or command prompt, and run:
 
 git clone https://github.com/ag1910-sys/osmose-internship-project.git
-This will download a copy of the code into a folder named snowflake-dashboard.
+This will download a copy of the code into a folder named osmose-internship-project.
 
 ## Step 2: Enter the folder
 cd snowflake-dashboard
