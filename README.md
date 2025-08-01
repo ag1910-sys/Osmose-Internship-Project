@@ -40,6 +40,33 @@ This project is a Streamlit app that runs inside Snowflake. It helps you see how
 • Average daily credits
 • Latest reported storage size
 
+# How to Clone & Run the Repository
+If you want to try this dashboard on your own system, here’s how to get started:
+
+## Step 1: Clone the repository
+Open your terminal or command prompt, and run:
+
+git clone https://github.com/ag1910-sys/osmose-internship-project.git
+This will download a copy of the code into a folder named snowflake-dashboard.
+
+## Step 2: Enter the folder
+cd snowflake-dashboard
+
+## Step 3: Install dependencies
+Make sure you have Python 3.8+ and pip installed. Then run:
+
+pip install -r requirements.txt
+This installs packages like streamlit, pandas, and snowflake-snowpark-python.
+
+## Step 4: Set up Snowflake connection
+Inside Streamlit in Snowflake, no extra login is needed — it uses get_active_session().
+
+If you want to run this locally, you’ll need to configure a Snowflake connection using a .env file or connection parameters (not covered here).
+
+## Step 5: Run the app
+streamlit run dashboard.py
+
+
 # How the Data Is Pulled
 The app uses simple SQL queries to get data from Snowflake tables (already created under OSM_DEV.RPT).
 Example SQL:
